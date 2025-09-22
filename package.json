@@ -1,0 +1,44 @@
+{
+  "name": "thunderbird-ai-compose",
+  "version": "0.1.0",
+  "description": "Thunderbird Mail Extension that helps you compose emails using AI",
+  "keywords": [
+    "Thunderbird",
+    "AI",
+    "Compose",
+    "Mail",
+    "Extension"
+  ],
+  "homepage": "https://github.com/luciferreeves/thunderbird-ai-compose#readme",
+  "bugs": {
+    "url": "https://github.com/luciferreeves/thunderbird-ai-compose/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciferreeves/thunderbird-ai-compose.git"
+  },
+  "license": "MIT",
+  "author": "Bobby <me@shi.foo>",
+  "scripts": {
+    "build:ts": "tsup src/background.ts src/popup/popup.ts src/options/options.ts --format esm --out-dir build --sourcemap",
+    "build:static": "cpy \"src/manifest.json\" \"src/popup/*.html\" \"src/options/*.html\" --to build",
+    "build": "npm run build:ts && npm run build:static",
+    "watch": "tsup src/background.ts src/popup/popup.ts src/options/options.ts --format esm --out-dir build --watch",
+    "start:dev": "npm run build && echo 'Now load build/manifest.json as a temporary add-on in Thunderbird (Tools → Developer Tools → Debug Add-ons → Load Temporary Add-on)'"
+  },
+  "dependencies": {
+    "webextension-polyfill": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/firefox-webext-browser": "^120.0.4",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "cpy-cli": "^6.0.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  }
+}
