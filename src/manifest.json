@@ -1,5 +1,5 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Thunderbird AI Compose",
     "version": "0.1.0",
     "description": "Thunderbird Mail Extension that helps you compose emails using AI",
@@ -7,27 +7,21 @@
         "compose",
         "messagesRead",
         "accountsRead",
-        "storage",
-        "commands"
+        "storage"
     ],
     "background": {
-        "service_worker": "background.js"
+        "scripts": [
+            "browser-polyfill.js",
+            "background.js"
+        ]
     },
-    "action": {
+    "compose_action": {
         "default_title": "Write with AI",
         "default_popup": "popup/popup.html"
     },
     "options_ui": {
         "page": "options/options.html",
         "open_in_tab": false
-    },
-    "commands": {
-        "open-popup": {
-            "suggested_key": {
-                "default": "Alt+I"
-            },
-            "description": "Open AI composer popup"
-        }
     },
     "applications": {
         "gecko": {
