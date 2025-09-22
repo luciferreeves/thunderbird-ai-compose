@@ -136,3 +136,10 @@ dist
 
 # SvelteKit build / generate output
 .svelte-kit
+
+# Editor Specific
+.idea
+.vscode
+
+# Build output
+build
