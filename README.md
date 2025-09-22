@@ -1,6 +1,6 @@
 ![Thunderbird AI Compose Banner](./banner.png)
 
-## 📦 Installation (Development Build)
+## Installation (Development Build)
 
 1. Clone the repository:
 
