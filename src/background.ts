@@ -1,21 +1,4 @@
-type Identity = {
-  id?: string;
-  email?: string;
-  name?: string;
-};
-
-type ComposeContext = {
-  account: Identity;
-  compose: {
-    subject?: string;
-    to?: string[];
-    cc?: string[];
-    bcc?: string[];
-    bodyPlain?: string;
-    bodyHTML?: string;
-    identityId?: string;
-  };
-};
+import { ComposeContext } from "./types";
 
 async function getComposeContext(): Promise<ComposeContext> {
   const data: ComposeContext = { account: {}, compose: {} };
@@ -34,6 +17,7 @@ async function getComposeContext(): Promise<ComposeContext> {
     data.compose.identityId = details?.identityId ?? undefined;
     data.compose.bodyPlain = details?.plainTextBody ?? "";
     data.compose.bodyHTML = details?.body ?? "";
+    data.compose.isHtml = Boolean(details?.body && details?.body.trim());
 
     const accounts: any[] = (browser as any).accounts?.list
       ? await (browser as any).accounts.list()
