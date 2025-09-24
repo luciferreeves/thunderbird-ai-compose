@@ -16,10 +16,12 @@
         "isolatedModules": true,
         "forceConsistentCasingInFileNames": true,
         "types": [
-            "firefox-webext-browser"
+            "firefox-webext-browser",
+            "node"
         ]
     },
     "include": [
-        "src"
+        "src",
+        "bundle.ts"
     ]
 }

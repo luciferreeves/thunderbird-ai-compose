@@ -21,22 +21,28 @@
   "author": "Bobby <me@shi.foo>",
   "scripts": {
     "clean": "rm -rf build",
-    "build:ts": "tsup src/background.ts src/popup/popup.ts src/options/options.ts --format cjs --out-dir build --splitting false --sourcemap",
-    "build:static": "cp src/manifest.json build/ && mkdir -p build/popup build/options && cp src/popup/*.html build/popup/ && cp src/options/*.html build/options/ && cp -r icons build/ && cp node_modules/webextension-polyfill/dist/browser-polyfill.js build/",
-    "build": "npm run clean && npm run build:ts && npm run build:static"
+    "build:ts": "tsup src/**/*.ts --format cjs --out-dir build --splitting false --sourcemap",
+    "build:static": "cp src/manifest.json build/ && cp -r src/popup build/ && cp -r src/options build/ && cp -r icons build/ && cp node_modules/webextension-polyfill/dist/browser-polyfill.js build/",
+    "build": "npm run clean && npm run build:ts && npm run build:static",
+    "bundle": "ts-node bundle.ts",
+    "release": "npm run build && npm run bundle"
   },
   "dependencies": {
     "webextension-polyfill": "^0.12.0"
   },
   "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
     "@types/firefox-webext-browser": "^120.0.4",
+    "@types/node": "^24.5.2",
     "@types/webextension-polyfill": "^0.12.3",
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "@typescript-eslint/parser": "^8.44.1",
+    "adm-zip": "^0.5.16",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2"
   }
