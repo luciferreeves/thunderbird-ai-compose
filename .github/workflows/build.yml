@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build extension
+      run: npm run build
+    
+    - name: Verify build output
+      run: |
+        if [ ! -d "build" ]; then
+          echo "❌ Build directory not found"
+          exit 1
+        fi
+        if [ ! -f "build/manifest.json" ]; then
+          echo "❌ manifest.json not found in build directory"
+          exit 1
+        fi
+        echo "✅ Build completed successfully"
+        ls -la build/
