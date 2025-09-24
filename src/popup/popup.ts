@@ -134,7 +134,7 @@ const { sendBtn, promptEl } = getElements();
 sendBtn.addEventListener("click", (): void => {
   handleInsert().catch((err: unknown): void => {
     console.error("Popup insert failed:", err);
-    alert("Error inserting text. See console for details.");
+    alert("Error inserting text: " + (err as Error).message + ". See console for more details.");
   });
 });
 promptEl.addEventListener("input", (): void => {
