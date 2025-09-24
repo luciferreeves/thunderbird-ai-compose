@@ -1,6 +1,24 @@
 ![Thunderbird AI Compose Banner](./banner.png)
 
-## Installation (Development Build)
+## Requires [Thunderbird AI Compose Server](https://github.com/luciferreeves/thunderbird-ai-compose-server)
+You should setup the [Thunderbird AI Compose Server](https://github.com/luciferreeves/thunderbird-ai-compose-server) before using this extension. Once you have the server running, you will be provided with an endpoint URL and a Secret Key, which you will need to configure the extension.
+
+## Installation 
+
+### Stable Release
+1. Download the latest release from the [Releases](https://github.com/luciferreeves/thunderbird-ai-compose/releases) page.
+2. Open Thunderbird and go to:
+
+    `Tools` → `Add-ons and Themes` → `Extensions` → `Install Add-on From File...`
+3. Select the downloaded `.xpi` file and follow the prompts to install.
+4. Restart Thunderbird to activate the extension.
+5. Configure the extension by going to:
+
+    `Tools` → `Add-ons and Themes` → `Extensions` → `Thunderbird AI Compose` → `Preferences`
+6. Enter the endpoint URL and Secret Key provided by your Thunderbird AI Compose Server.
+7. Save the settings and start using the AI-powered email composition features!
+
+### Development Build
 
 1. Clone the repository:
 
