@@ -3,6 +3,8 @@
 ## Requires [Thunderbird AI Compose Server](https://github.com/luciferreeves/thunderbird-ai-compose-server)
 You should setup the [Thunderbird AI Compose Server](https://github.com/luciferreeves/thunderbird-ai-compose-server) before using this extension. Once you have the server running, you will be provided with an endpoint URL and a Secret Key, which you will need to configure the extension.
 
+https://github.com/user-attachments/assets/ec7c964b-af9d-47a3-a6f0-f9578a8d640a
+
 ## Installation 
 
 ### Stable Release
