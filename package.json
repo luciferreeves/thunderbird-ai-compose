@@ -21,7 +21,7 @@
   "author": "Bobby <me@shi.foo>",
   "scripts": {
     "clean": "rm -rf build",
-    "build:ts": "tsup src/**/*.ts --format cjs --out-dir build --splitting false --sourcemap",
+    "build:ts": "tsup src/background.ts src/popup/popup.ts src/options/options.ts --format cjs --out-dir build --splitting false --sourcemap",
     "build:static": "cp src/manifest.json build/ && cp -r src/popup build/ && cp -r src/options build/ && cp -r icons build/ && cp node_modules/webextension-polyfill/dist/browser-polyfill.js build/",
     "build": "npm run clean && npm run build:ts && npm run build:static",
     "bundle": "ts-node bundle.ts",
