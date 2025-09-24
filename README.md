@@ -1,4 +1,4 @@
-![Thunderbird AI Compose Banner](./banner.png)
+![Thunderbird AI Compose Banner](./assets/banner.png)
 
 ## Requires [Thunderbird AI Compose Server](https://github.com/luciferreeves/thunderbird-ai-compose-server)
 You should setup the [Thunderbird AI Compose Server](https://github.com/luciferreeves/thunderbird-ai-compose-server) before using this extension. Once you have the server running, you will be provided with an endpoint URL and a Secret Key, which you will need to configure the extension.
