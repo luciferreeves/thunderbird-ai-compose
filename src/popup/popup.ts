@@ -102,7 +102,10 @@ async function handleInsert(): Promise<void> {
     });
 
     if (!res.ok) {
-      throw new Error(`Server responded with ${res.status}`);
+      const error = await res.json().catch(() => null);
+      throw new Error(
+        `Server responded with ${res.status}. Error: ${error?.error || res.statusText}`
+      );
     }
 
     const data: { response?: string } = (await res.json()) as { response?: string };
